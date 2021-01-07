@@ -25,7 +25,7 @@
       <div class="container">
         <div class="row">
         <div class="col-md-3">
-          <a href="compose.html" class="btn btn-primary btn-block mb-3">Compose</a>
+          <a href="/users/compose" class="btn btn-primary btn-block mb-3">Compose</a>
 
           <div class="card">
             <div class="card-header">
@@ -90,34 +90,22 @@
               <div class="table-responsive mailbox-messages">
                 <table class="table table-hover table-striped">
                   <tbody>
+                    <% for(var i = 0 ; i < data.length ; i++) { %>
                   <tr>
-                    <td>
-                      <div class="icheck-primary">
-                        <input type="checkbox" value="" id="check1">
-                        <label for="check1"></label>
-                      </div>
+                    <td class="mailbox-star">
+                      <a href="#"><i class="fas fa-star text-warning"></i></a>
                     </td>
-                    <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                    <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
-                    <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
+                    <td class="mailbox-name">
+                      <a href="/users/reply"><%= data[i].pengirim %></a>
+                    </td>
+                    <td class="mailbox-subject">
+                      <b><%= data[i].judul %></b> - 
+                      <%= data[i].pertanyaan.substring(0,50) + ". . . " %>
                     </td>
                     <td class="mailbox-attachment"></td>
-                    <td class="mailbox-date">5 mins ago</td>
+                    <td class="mailbox-date"><%= data[i].tanggal %></td>
                   </tr>
-                  <tr>
-                    <td>
-                      <div class="icheck-primary">
-                        <input type="checkbox" value="" id="check2">
-                        <label for="check2"></label>
-                      </div>
-                    </td>
-                    <td class="mailbox-star"><a href="#"><i class="fas fa-star-o text-warning"></i></a></td>
-                    <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
-                    <td class="mailbox-subject"><b>AdminLTE 3.0 Issue</b> - Trying to find a solution to this problem...
-                    </td>
-                    <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
-                    <td class="mailbox-date">28 mins ago</td>
-                  </tr>
+                  <% } %>
                   </tbody>
                 </table>
                 <!-- /.table -->

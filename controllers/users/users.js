@@ -1,8 +1,12 @@
 const controller = {} ;
-
+const db		 = require('../../db');
 //controller untuk dashboard user  atau client
 controller.dashboard = (req,res)=> {
-	res.render('users/index');
+	db.query("select * from question order by id desc", (err,rows)=> {
+		res.render('users/index', {
+			data : rows
+		});
+	})
 }
 
 

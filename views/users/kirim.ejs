@@ -27,27 +27,34 @@
           <!-- left column -->
           <div class="col-md-12">
             <!-- jquery validation -->
+            <div class="form-group">
+              <a href="/users" class="btn btn-info"><i class="fa fa-arrow-left"></i> Back to Home</a>
+            </div>
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Kirim Pertanyaan </h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" id="quickForm">
+              <form role="form" method="post" action="/users/compose" id="quickForm">
                 <div class="card-body">
+                  <% if(message.sukses.length > 0) { %>
+                  <div class="alert alert-info">
+                    <label><%= message.sukses %></label>
+                  </div>
+                  <% } %>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Judul Pertanyaan</label>
-                    <input type="text" name="judul" class="form-control" id="exampleInputEmail1" placeholder="Judul">
+                    <label for="judul">Judul Pertanyaan</label>
+                    <input type="text" name="judul" class="form-control" id="judul" placeholder="Judul">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Tanggal</label>
-                    <input type="text" name="tanggal" class="form-control" id="exampleInputPassword1" placeholder="Tanggal">
+                    <label for="tanggal">Tanggal</label>
+                    <input type="text" name="tanggal" class="form-control" id="tanggal" placeholder="Tanggal">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Pertanyaan</label>
-                    <textarea type="text" name="tanggal" class="form-control" id="exampleInputPassword1" placeholder="isi pertanyaan"></textarea>
+                    <label for="question">Pertanyaan</label>
+                    <textarea type="text" name="question" class="form-control" id="question" placeholder="isi pertanyaan"></textarea>
                   </div>
-
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
@@ -62,7 +69,16 @@
         </div>
       </div>
     </div>
-
+<script type="text/javascript">
+  const arrbulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+  const date = new Date();
+  const hari = date.getDay();
+  const tgl = date.getDate();
+  const bulan = date.getMonth();
+  const tahun = date.getFullYear();
+  const p   = tgl + " "+  arrbulan[bulan] + " " + tahun   ;
+  document.getElementById('tanggal').value = p ;
+</script>
   <!-- /.content-wrapper -->
 
 <%- include('./partials/footer') -%>

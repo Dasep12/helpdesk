@@ -6,6 +6,6 @@ const controllerKirim 	= require('../../controllers/users/compose');
 
 router.get('/', controller.dashboard);
 router.get('/compose',controllerKirim.kirim);
-
+router.post('/compose',controllerKirim.input);
 
 module.exports = router ;
