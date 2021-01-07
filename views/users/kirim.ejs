@@ -1,0 +1,68 @@
+<!-- <html> -->
+<%- include('./partials/header') -%>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <!-- <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Layout</a></li>
+              <li class="breadcrumb-item active">Top Navigation</li>
+            </ol> -->
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- jquery validation -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Kirim Pertanyaan </h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form" id="quickForm">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Judul Pertanyaan</label>
+                    <input type="text" name="judul" class="form-control" id="exampleInputEmail1" placeholder="Judul">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Tanggal</label>
+                    <input type="text" name="tanggal" class="form-control" id="exampleInputPassword1" placeholder="Tanggal">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Pertanyaan</label>
+                    <textarea type="text" name="tanggal" class="form-control" id="exampleInputPassword1" placeholder="isi pertanyaan"></textarea>
+                  </div>
+
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit Pertanyaan</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+            </div>
+          <!--/.col (left) -->
+        </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- /.content-wrapper -->
+
+<%- include('./partials/footer') -%>
